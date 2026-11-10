@@ -1,6 +1,7 @@
 context:
   name: ckmseed
-  version: "1.0.0"
+  version: "1.1.0"
+  python_min: "3.12"
 
 package:
   name: ${{ name }}
@@ -8,7 +9,7 @@ package:
 
 source:
   url: https://gitlab.com/earthscope/public/epic/passoft/ckMseed/-/archive/v${{ version }}/ckMseed-v${{ version }}.tar.gz
-  sha256: aaf6f3366cb0ab27657a3cfb31a514acab9702cd1f3fb186ba3958845312eb60
+  sha256: aef187cf2294b60496fc246a21d935baa74bfd7170597ec9da6ef02155d4d427
 
 build:
   noarch: python
@@ -22,7 +23,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - setuptools >=77
   run:
     - python >=${{ python_min }}
     - pyside6
